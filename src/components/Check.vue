@@ -13,7 +13,6 @@
 
 <script setup>
 
-import { ref } from 'vue'
 import { useCheckListStore } from '@/stores/checklist'
 const storeChecklist = useCheckListStore()
 
@@ -62,10 +61,6 @@ function checkItem(uniqueID) {
         currentCheckList.progress--
     }
 }
-
-
-
-
 
 </script>
 

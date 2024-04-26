@@ -20,6 +20,7 @@ function reset() {
 
 function checked() {
     console.log(storeChecklist.count)
+    emit('activateNextCheckItem')
 }
 
 </script>
