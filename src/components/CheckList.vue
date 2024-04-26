@@ -21,12 +21,12 @@
 </template>
 
 <script setup>
-
+//const check = ref(null)
 import { ref } from 'vue'
 import Check from './Check.vue'
 import { useCheckListStore } from '@/stores/checklist'
 const storeChecklist = useCheckListStore()
-const check = ref(null)
+
 
 const props = defineProps({
     'list': Array,
