@@ -25,6 +25,8 @@ export const useCheckListStore = defineStore({
           check.uniqueID = list.id * 100 + check.id;
           check.checklistID = list.id;
           check.checkable = false;
+          check.checkedByButton = false;
+          check.failed = false;
           this.checkItems.push(check);
         });
       });

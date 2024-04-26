@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div @click="checkItem(check.uniqueID)" class="form-check d-flex justify-content-between"
-            :class="{ active: check.active, disableclick: (!check.active && !check.checkable) }">
+        <div @click="checkItem(check.uniqueID, !check.checked)" class="form-check d-flex justify-content-between"
+            :class="{ active: check.active, disableclick: (!check.active && !check.checkable), failed: check.failed }">
             <div><input type="checkbox" v-model="check.checked" :value="check.uniqueID" class="form-check-input"
                     value="">
                 <p>{{ check.id }}. {{ check.check }}</p>
@@ -12,26 +12,30 @@
 </template>
 
 <script setup>
-
+import { ref, watch } from 'vue'
 import { useCheckListStore } from '@/stores/checklist'
 const storeChecklist = useCheckListStore()
 
 const props = defineProps({
     'check': Object
 })
-const emit = defineEmits(['activateNextCheck'])
+
 let check = storeChecklist.checkItems.find(checkitem => checkitem.uniqueID === props.check.uniqueID)
 
-function checkItem(uniqueID) {
-    console.log("checkItem : ", uniqueID)
-    console.log("Previous checkedState : ", check.checked)
-    check.checked = !check.checked
+watch(() => check.checkedByButton, (newVal, oldVal) => {
+    console.log("Triggered by button on item[" + check.uniqueID + "] ", oldVal, "->", newVal, check.uniqueID)
+    if (newVal == true) checkItem(check.uniqueID, newVal)
+})
+
+function checkItem(uniqueID, state) {
+    check.checked = state //= !state
+    console.log("New checkedState item[" + uniqueID + "] : ", state)
     const currentIndex = storeChecklist.checkItems.findIndex(checkitem => checkitem.uniqueID === props.check.uniqueID)
     let currentCheckList = storeChecklist.checkLists.find(checklist => checklist.id === props.check.checklistID)
 
     // diasble checkable for all checks
     storeChecklist.checkItems.forEach(checkitem => checkitem.checkable = false)
-    if (check.checked) { //Checked a chceck
+    if (state) { //Checked a chceck
         // deactivate current check
         check.active = false
 
@@ -57,7 +61,9 @@ function checkItem(uniqueID) {
         // deactivate all checks
         storeChecklist.checkItems.forEach(checkitem => checkitem.active = false)
         // activcate next unchecked check
-        storeChecklist.checkItems.find(checkitem => checkitem.checklistID === props.check.checklistID && checkitem.checked === false).active = true
+        let nextUnchecked = storeChecklist.checkItems.find(checkitem => checkitem.checklistID === props.check.checklistID && checkitem.checked === false)
+        nextUnchecked.active = true
+        nextUnchecked.checkedByButton = false
         currentCheckList.progress--
     }
 }
@@ -75,5 +81,9 @@ function checkItem(uniqueID) {
 
 .disableclick {
     pointer-events: none;
+}
+
+.failed {
+    color: #ff0000;
 }
 </style>

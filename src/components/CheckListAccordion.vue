@@ -26,7 +26,7 @@ storeChecklist.addChecksTolist(props.lists)
 onMounted(() => {
     const activateCheckList = 1
     //set checklist active on load
-    storeChecklist.checkLists.find(checklist => checklist.id === activateCheckList).active = true
+    storeChecklist.checkLists.find(list => list.id === activateCheckList).active = true
 
     //set first unchecked check active on load
     storeChecklist.checkItems.find(check => (check.checklistID === activateCheckList && check.checked === false)).active = true
