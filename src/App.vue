@@ -1,4 +1,6 @@
 <template>
+
+
   <CheckListAccordion ref="checkListAccordion" :lists=checklists />
   <ActionButtons />
 </template>
@@ -7,8 +9,9 @@
 
 import CheckListAccordion from './components/CheckListAccordion.vue'
 import ActionButtons from './components/ActionButtons.vue'
-
-const checklists = [
+import jsonPHDYX from './checklists/phdyx.json'
+const checklists = jsonPHDYX
+const checklistsTest = [
   {
     id: 1,
     name: "BEFORE START-UP",

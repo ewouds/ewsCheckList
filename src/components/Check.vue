@@ -4,9 +4,9 @@
             :class="{ active: check.active, disableclick: (!check.active && !check.checkable), failed: check.failed }">
             <div><input type="checkbox" v-model="check.checked" :value="check.uniqueID" class="form-check-input"
                     value="">
-                <p>{{ check.id }}. {{ check.check }}</p>
+                <p class="checkTxt">{{ check.id }}. {{ check.check }}:</p>
             </div>
-            <p>{{ check.desired }}</p>
+            <p class="desired">{{ check.desired }}</p>
         </div>
     </div>
 </template>
@@ -77,6 +77,7 @@ function checkItem(uniqueID, state) {
     text-shadow: #4d4d4d;
     padding: 28px;
     pointer-events: auto;
+    flex-direction: column;
 }
 
 .disableclick {
@@ -86,4 +87,10 @@ function checkItem(uniqueID, state) {
 .failed {
     color: #ff0000;
 }
+
+.checkTXT {
+    margin: 0;
+}
+
+.desired {}
 </style>

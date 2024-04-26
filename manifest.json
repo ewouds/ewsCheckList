@@ -1,0 +1,28 @@
+{
+  "name": "EWS CheckList app",
+  "short_name": "CheckList",
+  "description": "Checklist for pilots to use during checks",
+  "start_url": "/",
+  "theme_color": "#1e1e2d",
+  "background_color": "#1e1e2d",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "72x72 96x96",
+      "purpose": "maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "128x128 256x256"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512"
+    }
+  ]
+}

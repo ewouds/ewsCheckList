@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "BEFORE START-UP",
+    "checks": [
+      {
+        "id": 1,
+        "check": "POH ",
+        "desired": "CHECK LATEST EDITION and WITHIN REACH"
+      },
+      { "id": 2, "check": "Canopy", "desired": "CLOSED & LOCKED" },
+      { "id": 3, "check": "Parking brake ", "desired": "ON" },
+      { "id": 4, "check": "Front seats ", "desired": " ADJUSTED & LOCKED" },
+      {
+        "id": 5,
+        "check": "Belts & harnesses ",
+        "desired": "ADJUSTED & FASTENED"
+      },
+      { "id": 6, "check": "Flight controls", "desired": "FREE & CORRECT" },
+      { "id": 7, "check": "Battery Master switch", "desired": "ON" },
+      { "id": 8, "check": "CED lights auto test", "desired": " MONITOR" },
+      { "id": 9, "check": "ALTERNATOR CB switch ", "desired": "ON" },
+      {
+        "id": 10,
+        "check": "Annunciator panel ",
+        "desired": "TEST SET DAY/NIGHT"
+      },
+      { "id": 11, "check": "Circuit breakers ", "desired": "IN" },
+      {
+        "id": 12,
+        "check": "Elevator trim",
+        "desired": "MOVEMENT AND DIRECTION THEN SET FOR TAKEOFF"
+      },
+      {
+        "id": 13,
+        "check": "Fuel quantity",
+        "desired": "CHECK SUFFUCIENT FOR FLIGHT"
+      },
+      {
+        "id": 14,
+        "check": "All electrical switches and avionics ",
+        "desired": "OFF"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "ENGINE START",
+    "checks": [
+      { "id": 1, "check": "Strobe light ", "desired": "ON" },
+      { "id": 2, "check": "Fuel level and temperature", "desired": "CHECK" },
+      { "id": 3, "check": "Fuel selector ", "desired": "ON" },
+      { "id": 4, "check": "Alternate induction air", "desired": "CLOSED" },
+      { "id": 5, "check": "Electrical fuel pump", "desired": "ON" },
+      { "id": 6, "check": "Power lever ", "desired": " IDLE" },
+      { "id": 7, "check": "Propeller area", "desired": " CLEAR" },
+      { "id": 8, "check": "Engine Master switch ", "desired": "ON" },
+      { "id": 9, "check": "FADEC-lights ", "desired": "CHECK OFF" },
+      { "id": 10, "check": "Glow control light", "desired": "WAIT UNTIL OFF" },
+      { "id": 11, "check": "Starter ", "desired": "ENGAGE" },
+      { "id": 12, "check": "Check ", "desired": "OIL PRESSURE / IDLE RPM 890" },
+      {
+        "id": 13,
+        "check": "“CED” warning light ",
+        "desired": "ACKNOWLEDGE and CANCEL"
+      },
+      { "id": 14, "check": "ALT light", "desired": "CHECK OFF" },
+      { "id": 15, "check": "Voltage", "desired": "CHECK 14 Volt" },
+      { "id": 16, "check": "FADEC lights", "desired": "CHECK OFF" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "AFTER ENGINE START",
+    "checks": [
+      { "id": 1, "check": "Electrical Fuel pump", "desired": "OFF" },
+      { "id": 2, "check": "FADEC BACKUP BATTERY CHECK", "desired": "" },
+      {
+        "id": 3,
+        "check": "Alternator ",
+        "desired": "OFF engine must operate normally"
+      },
+      {
+        "id": 4,
+        "check": "Battery OFF for minimum 10 seconds engine must operate normally and NO red FADEC lights illuminated",
+        "desired": ""
+      },
+      { "id": 5, "check": "Battery Master switch", "desired": "ON" },
+      { "id": 6, "check": "ALTERNATOR CB switch ", "desired": "ON" },
+      { "id": 7, "check": "Alternator light ", "desired": "CHECK OFF" },
+      { "id": 8, "check": "Voltmeter", "desired": "CHECK IN GREEN ZONE" },
+      { "id": 9, "check": "Avionics Master switch", "desired": "ON" },
+      { "id": 10, "check": "COM/NAV ", "desired": "ON and SET" },
+      { "id": 11, "check": "Altimeter", "desired": " SET" },
+      { "id": 12, "check": "Standby Attitude Module ", "desired": "CHECK" }
+    ]
+  }
+]
