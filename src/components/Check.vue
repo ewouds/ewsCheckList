@@ -91,6 +91,4 @@ function checkItem(uniqueID, state) {
 .checkTXT {
     margin: 0;
 }
-
-.desired {}
 </style>
