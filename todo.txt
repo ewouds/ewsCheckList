@@ -1,6 +1,6 @@
 - [x] add version variable
 - [ ] complete phdyx checklist
 - [ ] settings-page
-- [ ] save state local session 
-- [ ] reset all checklist
-
+- [x] save state local session 
+- [ ] reset all checklist via longpress
+- [ ] add progress bar in checklist header
