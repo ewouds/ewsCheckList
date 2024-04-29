@@ -2,7 +2,7 @@
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
 
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="../../logo.png" alt="Logo" width="30" height="24"
+            <a class="navbar-brand" href="#"><img src="@/media/logo.png" alt="Logo" width="30" height="24"
                     class="d-inline-block align-text-top">
                 EWS CheckList v0.2</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
