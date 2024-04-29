@@ -2,12 +2,14 @@ import { defineStore } from "pinia";
 
 export const useCheckListStore = defineStore({
   persist: true,
+
   id: "checklist",
   state: () => ({
     checkItems: [],
     checkLists: [],
     test: false,
     userName: "ewouds",
+    planeName: "OO-OOO",
   }),
   actions: {
     addChecksTolist(lists) {

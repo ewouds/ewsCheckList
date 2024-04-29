@@ -23,13 +23,11 @@ const props = defineProps({
 let check = storeChecklist.checkItems.find(checkitem => checkitem.uniqueID === props.check.uniqueID)
 
 watch(() => check.checkedByButton, (newVal, oldVal) => {
-    console.log("Triggered by button on item[" + check.uniqueID + "] ", oldVal, "->", newVal, check.uniqueID)
     if (newVal == true) checkItem(check.uniqueID, newVal)
 })
 
 function checkItem(uniqueID, state) {
     check.checked = state //= !state
-    console.log("New checkedState item[" + uniqueID + "] : ", state)
     const currentIndex = storeChecklist.checkItems.findIndex(checkitem => checkitem.uniqueID === props.check.uniqueID)
     let currentCheckList = storeChecklist.checkLists.find(checklist => checklist.id === props.check.checklistID)
 

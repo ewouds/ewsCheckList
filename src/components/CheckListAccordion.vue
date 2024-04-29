@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="accordion" id="checkListsAccordion" ref="checkListAccordion">
-            <div v-for="checklist in lists" :key="checklist.id" class="accordion-item">
-                <CheckList ref="checkList" :list=checklist.checks :name=checklist.name :checklistId=checklist.id>
+            <div v-for="list in props.lists.checklists" :key="list.id" class="accordion-item">
+                <CheckList ref="checkList" :list=list.checks :name=list.name :checklistId=list.id>
                 </CheckList>
             </div>
         </div>
@@ -16,13 +16,15 @@ import CheckList from './CheckList.vue'
 import { useCheckListStore } from '@/stores/checklist'
 
 const storeChecklist = useCheckListStore()
-const checkList = ref(null)
 const props = defineProps({
-    lists: Array
+    lists: Object
 })
 
-storeChecklist.addChecksTolist(props.lists)
+storeChecklist.addChecksTolist(props.lists.checklists)
 
+console.log(props.lists.checklists)
+storeChecklist.planeName = props.lists.planeName
+//console("Vliegtuig : " + storeChecklist.planeName)
 onMounted(() => {
     const activateCheckList = 1
     //set checklist active on load

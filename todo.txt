@@ -4,4 +4,5 @@
 - [x] save state local session 
 - [ ] reset all checklist via longpress
 - [ ] add progress bar in checklist header
-add focus 
+- [ ] add focus to active item
+- [ ] set active plane in title

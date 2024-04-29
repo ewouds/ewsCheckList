@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="@/media/logo.png" alt="Logo" width="30" height="24"
                     class="d-inline-block align-text-top">
-                EWS CheckList {{ version }}</a>
+                EWS CheckList {{ version }} - <b> [ {{ storeChecklist.planeName }} ]</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -95,7 +95,10 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+
+import { useCheckListStore } from '@/stores/checklist'
+
+const storeChecklist = useCheckListStore()
 let version = localStorage.getItem("ewschecklistver");
 
 function selectPlane(plane) {
