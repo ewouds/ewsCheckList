@@ -1,0 +1,6 @@
+- [ ] add version variable
+- [ ] complete phdyx checklist
+- [ ] settings-page
+- [ ] save state local session 
+- [ ] reset all checklist
+

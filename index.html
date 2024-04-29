@@ -7,13 +7,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="logo.png">
-  <title>EWS CheckList v0.2</title>
+
+  <title>EWS CheckList vx.x</title>
 </head>
 
 <body>
-
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
+  <script>
+    console.log("version : " + localStorage.getItem("ewschecklistver"));
+    document.title = "EWS CheckList " + localStorage.getItem("ewschecklistver");
+  </script>
 </body>
 
 </html>

@@ -1,10 +1,9 @@
 <template>
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="@/media/logo.png" alt="Logo" width="30" height="24"
                     class="d-inline-block align-text-top">
-                EWS CheckList v0.2</a>
+                EWS CheckList {{ version }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -96,11 +95,15 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
+let version = localStorage.getItem("ewschecklistver");
 
 function selectPlane(plane) {
     console.log("Selected plane: ", plane)
 }
+
 </script>
+
 
 <style scoped>
 /* Your component's styles go here */
