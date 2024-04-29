@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 
 export const useCheckListStore = defineStore({
+  persist: true,
   id: "checklist",
   state: () => ({
     checkItems: [],

@@ -1,4 +1,4 @@
-- [ ] add version variable
+- [x] add version variable
 - [ ] complete phdyx checklist
 - [ ] settings-page
 - [ ] save state local session 
