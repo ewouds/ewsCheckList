@@ -6,4 +6,4 @@
 - [ ] add progress bar in checklist header
 - [ ] add focus to active item
 - [x] set active plane in title
-- [ ] reduce Layout plane in title
+- [x] reduce Layout plane in title
