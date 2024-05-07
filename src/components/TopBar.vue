@@ -1,9 +1,14 @@
 <template>
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="@/media/logo.png" alt="Logo" width="30" height="24"
-                    class="d-inline-block align-text-top">
-                EWS CheckList {{ version }} - <b> [ {{ storeChecklist.planeName }} ]</b></a>
+            <a class="navbar-brand" href="#"><img src="@/media/logo.png" alt="Logo" width="30" height="24"                
+                    class="d-inline-block align-text-top"></a>
+                    <div class="d-flex justify-content-center ">
+    <div class="d-none d-sm-block">EWS CheckList {{ version }} -</div>
+    <div class=""><b> [ {{ storeChecklist.planeName }} ] </b></div>
+  </div>
+                    <div class="d-none d-md-block"> </div>
+                   
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,7 +38,6 @@
             </div>
         </div>
     </nav>
-
     <!-- settingsModal -->
     <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
         <div class="modal-dialog">

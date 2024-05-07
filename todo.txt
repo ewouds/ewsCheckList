@@ -5,4 +5,5 @@
 - [ ] reset all checklist via longpress
 - [ ] add progress bar in checklist header
 - [ ] add focus to active item
-- [ ] set active plane in title
+- [x] set active plane in title
+- [ ] reduce Layout plane in title
