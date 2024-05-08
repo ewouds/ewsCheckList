@@ -1,14 +1,13 @@
 <template>
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="@/media/logo.png" alt="Logo" width="30" height="24"                
+            <a class="navbar-brand" href="#"><img src="@/media/logo.png" alt="Logo" width="30" height="24"
                     class="d-inline-block align-text-top"></a>
-                    <div class="d-flex justify-content-center ">
-    <div class="d-none d-sm-block">EWS CheckList {{ version }} -</div>
-    <div class=""><b> [ {{ storeChecklist.planeName }} ] </b></div>
-  </div>
-                    <div class="d-none d-md-block"> </div>
-                   
+            <div class="d-flex justify-content-center ">
+                <div class="d-none d-sm-block">EWS CheckList {{ version }} -</div>
+                <div class=""><b> [ {{ storeChecklist.planeName }} ] </b></div>
+            </div>
+            <div class="d-none d-md-block"> </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,6 +29,15 @@
                             <li><a class="dropdown-item" href="#">OO-PEG</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Help
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" data-bs-toggle="modal" data-bs-target="#infoModal">info</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -38,6 +46,19 @@
             </div>
         </div>
     </nav>
+    <!-- infoModal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="infoModalLabel">Version {{ version }}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- settingsModal -->
     <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
         <div class="modal-dialog">
