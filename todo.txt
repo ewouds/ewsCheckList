@@ -3,7 +3,7 @@
 - [ ] settings-page
 - [x] save state local session 
 - [ ] reset all checklist via longpress
-- [ ] add progress bar in checklist header
+- [ ] progress bar in checklist header
 - [ ] add focus to active item
 - [x] set active plane in title
 - [x] reduce Layout plane in title

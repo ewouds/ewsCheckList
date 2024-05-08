@@ -18,17 +18,23 @@
     <div :id="`collapse${checklist.id}`" v-bind:aria-labelledby="`heading${checklist.id}`"
         class="accordion-collapse collapse" :class="{ show: checklist.active }" data-bs-parent="#checkListsAccordion">
         <div class="accordion-body">
-            <div v-for="(check) in list">
-                <Check ref="check" :check="check" :name="name" :uniqueID="check.uniqueID" />
+            <div v-for="(check, index) in list" :key="index">
+                <Check @focus-clicked="scrollTo(index)" ref="checkRefx" :check="check" :name="name"
+                    :uniqueID="check.uniqueID" />
+                <!-- <button @click="scrollTo(index)">Scroll to</button> -->
+
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import Check from './Check.vue'
 import { useCheckListStore } from '@/stores/checklist'
 const storeChecklist = useCheckListStore()
+
+const checkRefx = ref(null)
 
 const props = defineProps({
     'list': Array,
@@ -37,11 +43,12 @@ const props = defineProps({
 })
 
 const checklist = storeChecklist.checkLists[storeChecklist.checkLists.findIndex(list => list.id === props.checklistId)]
-let progress = checklist.progress / checklist.totalChecks * 100
+let progress = (checklist.progress / checklist.totalChecks) * 100;
 
-defineExpose({
-    // activateCheck
-})
+function scrollTo(index) {
+    this.checkRefx[index].$el.scrollIntoView({ behavior: 'smooth' });
+}
+
 </script>
 
 <style scoped>

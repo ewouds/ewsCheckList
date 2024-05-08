@@ -12,9 +12,11 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { watch, defineEmits } from 'vue'
 import { useCheckListStore } from '@/stores/checklist'
 const storeChecklist = useCheckListStore()
+
+const emit = defineEmits(['focus-clicked']);
 
 const props = defineProps({
     'check': Object
@@ -64,6 +66,10 @@ function checkItem(uniqueID, state) {
         nextUnchecked.checkedByButton = false
         currentCheckList.progress--
     }
+
+    // focus on active item
+    emit('focus-clicked');
+
 }
 
 </script>
