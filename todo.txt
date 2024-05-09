@@ -7,3 +7,4 @@
 - [ ] add focus to active item
 - [x] set active plane in title
 - [x] reduce Layout plane in title
+- [ ] fix scroll on android/edge PWA

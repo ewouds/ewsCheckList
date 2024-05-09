@@ -32,6 +32,7 @@
 import { ref } from 'vue'
 import Check from './Check.vue'
 import { useCheckListStore } from '@/stores/checklist'
+
 const storeChecklist = useCheckListStore()
 
 const checkRefx = ref(null)
@@ -46,7 +47,11 @@ const checklist = storeChecklist.checkLists[storeChecklist.checkLists.findIndex(
 let progress = (checklist.progress / checklist.totalChecks) * 100;
 
 function scrollTo(index) {
-    this.checkRefx[index].$el.scrollIntoView({ behavior: 'smooth' });
+    console.log("scrolling to: ")
+    console.log(index)
+    console.log(checkRefx.value[index])
+    console.log(checkRefx.value[index].$el)
+    checkRefx.value[index].$el.scrollIntoView({ behavior: 'smooth' });
 }
 
 </script>

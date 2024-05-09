@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { watch, defineEmits } from 'vue'
+import { watch } from 'vue'
 import { useCheckListStore } from '@/stores/checklist'
 const storeChecklist = useCheckListStore()
 
