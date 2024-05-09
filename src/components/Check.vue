@@ -16,7 +16,7 @@ import { watch } from 'vue'
 import { useCheckListStore } from '@/stores/checklist'
 const storeChecklist = useCheckListStore()
 
-const emit = defineEmits(['focus-clicked']);
+const emit = defineEmits(['check-clicked']);
 
 const props = defineProps({
     'check': Object
@@ -68,7 +68,7 @@ function checkItem(uniqueID, state) {
     }
 
     // focus on active item
-    emit('focus-clicked');
+    emit('check-clicked');
 
 }
 

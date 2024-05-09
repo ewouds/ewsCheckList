@@ -6,7 +6,7 @@ import App from "./App.vue";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 
-localStorage.setItem("ewschecklistver", "v20240508.1");
+localStorage.setItem("ewschecklistver", "v20240509.1");
 
 const app = createApp(App);
 

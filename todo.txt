@@ -2,9 +2,10 @@
 - [ ] complete phdyx checklist
 - [ ] settings-page
 - [x] save state local session 
-- [ ] reset all checklist via longpress
-- [ ] progress bar in checklist header
-- [ ] add focus to active item
+- [x] reset all checklist via longpress
+- [x] add focus to active item
 - [x] set active plane in title
 - [x] reduce Layout plane in title
-- [ ] fix scroll on android/edge PWA
+- [x] fix scroll on android/edge PWA
+- [x] progress bar in checklist header
+- [ ] check all button

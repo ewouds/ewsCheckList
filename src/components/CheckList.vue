@@ -19,10 +19,8 @@
         class="accordion-collapse collapse" :class="{ show: checklist.active }" data-bs-parent="#checkListsAccordion">
         <div class="accordion-body">
             <div v-for="(check, index) in list" :key="index">
-                <Check @focus-clicked="scrollTo(index)" ref="checkRefx" :check="check" :name="name"
+                <Check @check-clicked="clickedCheck(index)" ref="checkRefx" :check="check" :name="name"
                     :uniqueID="check.uniqueID" />
-                <!-- <button @click="scrollTo(index)">Scroll to</button> -->
-
             </div>
         </div>
     </div>
@@ -44,14 +42,13 @@ const props = defineProps({
 })
 
 const checklist = storeChecklist.checkLists[storeChecklist.checkLists.findIndex(list => list.id === props.checklistId)]
-let progress = (checklist.progress / checklist.totalChecks) * 100;
+let progress = 0
 
-function scrollTo(index) {
-    console.log("scrolling to: ")
-    console.log(index)
-    console.log(checkRefx.value[index])
-    console.log(checkRefx.value[index].$el)
+function clickedCheck(index) {
+    //scroll to clicked check
     checkRefx.value[index].$el.scrollIntoView({ behavior: 'smooth' });
+    // update progressbar
+    progress = (checklist.progress / checklist.totalChecks) * 100;
 }
 
 </script>
