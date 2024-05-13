@@ -1,11 +1,12 @@
 <template>
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="@/media/logo.png" alt="Logo" width="30" height="24"
+            <a class="navbar-brand" href="#"><img src="@/media/logo.png" alt="Logo" width="28"
                     class="d-inline-block align-text-top"></a>
             <div class="d-flex justify-content-center ">
-                <div class="d-none d-sm-block">EWS CheckList {{ version }} -</div>
-                <div class=""><b> [ {{ storeChecklist.planeName }} ] </b></div>
+                <div class="d-none d-sm-block">EWS CheckList {{ version }} - </div>
+                <p class="font-weight-bold"><b>[ {{ storeChecklist.planeName }} ]</b></p>
+
             </div>
             <div class="d-none d-md-block"> </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"

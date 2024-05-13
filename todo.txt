@@ -9,3 +9,4 @@
 - [x] fix scroll on android/edge PWA
 - [x] progress bar in checklist header
 - [ ] check all button
+- [ ] update progress if uncheck -> watch function?

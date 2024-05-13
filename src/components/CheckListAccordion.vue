@@ -20,9 +20,13 @@ const props = defineProps({
     lists: Object
 })
 
-storeChecklist.addChecksTolist(props.lists.checklists)
+if (props.lists.checklists.length !== storeChecklist.checkLists.length) {
+    storeChecklist.$reset()
+    storeChecklist.addChecksTolist(props.lists.checklists)
+}
 
-console.log(props.lists.checklists)
+
+
 storeChecklist.planeName = props.lists.planeName
 //console("Vliegtuig : " + storeChecklist.planeName)
 onMounted(() => {
