@@ -36,11 +36,4 @@ function onLongPressCallbackHook() {
     useResetAll();
 }
 
-
-
-
-
-
-
-
 </script>

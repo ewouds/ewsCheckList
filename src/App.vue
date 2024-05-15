@@ -6,11 +6,13 @@
 </template>
 
 <script setup>
-
+import jsonPHDYX from './checklists/phdyx.json'
 import TopBar from './components/TopBar.vue'
 import CheckListAccordion from './components/CheckListAccordion.vue'
 import ActionButtons from './components/ActionButtons.vue'
-import jsonPHDYX from './checklists/phdyx.json'
+
 const checklists = jsonPHDYX
+
+
 
 </script>

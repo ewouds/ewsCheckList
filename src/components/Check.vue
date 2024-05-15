@@ -22,14 +22,14 @@ const props = defineProps({
     'check': Object
 })
 
-let check = storeChecklist.checkItems.find(checkitem => checkitem.uniqueID === props.check.uniqueID)
+let checkState = storeChecklist.checkItems.find(checkitem => checkitem.uniqueID === props.check.uniqueID)
 
-watch(() => check.checkedByButton, (newVal, oldVal) => {
-    if (newVal == true) checkItem(check.uniqueID, newVal)
+watch(() => checkState.checkedByButton, (newVal, oldVal) => {
+    if (newVal == true) checkItem(checkState.uniqueID, newVal)
 })
 
 function checkItem(uniqueID, state) {
-    check.checked = state //= !state
+    checkState.checked = state //= !state
     const currentIndex = storeChecklist.checkItems.findIndex(checkitem => checkitem.uniqueID === props.check.uniqueID)
     let currentCheckList = storeChecklist.checkLists.find(checklist => checklist.id === props.check.checklistID)
 
@@ -37,7 +37,7 @@ function checkItem(uniqueID, state) {
     storeChecklist.checkItems.forEach(checkitem => checkitem.checkable = false)
     if (state) { //Checked a chceck
         // deactivate current check
-        check.active = false
+        checkState.active = false
 
         // keep previous check active to undo check
         storeChecklist.checkItems[currentIndex].checkable = true
@@ -53,7 +53,7 @@ function checkItem(uniqueID, state) {
     }
     else { // unchecked a check
         // activate previous check
-        check.active = false
+        checkState.active = false
 
         // keep previous check active to undo check        
         if (currentIndex > 0) storeChecklist.checkItems[currentIndex - 1].checkable = true
@@ -66,10 +66,8 @@ function checkItem(uniqueID, state) {
         nextUnchecked.checkedByButton = false
         currentCheckList.progress--
     }
-
     // focus on active item
     emit('check-clicked');
-
 }
 
 </script>

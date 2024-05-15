@@ -16,9 +16,8 @@
     <div :id="`collapse${checklist.id}`" v-bind:aria-labelledby="`heading${checklist.id}`"
         class="accordion-collapse collapse" :class="{ show: checklist.active }" data-bs-parent="#checkListsAccordion">
         <div class="accordion-body">
-            <div v-for="(check, index) in list" :key="index">
-                <Check @check-clicked="clickedCheck(index)" ref="checkRefx" :check="check" :name="name"
-                    :uniqueID="check.uniqueID" />
+            <div v-for="(check, index) in checks" :key="index">
+                <Check @check-clicked="clickedCheck(index)" ref="checkRefx" :check="check" />
             </div>
         </div>
     </div>
@@ -38,12 +37,13 @@ let allChecked = false
 const checkRefx = ref(null)
 
 const props = defineProps({
-    'list': Array,
     'name': String,
     'checklistId': Number
 })
 
 const checklist = storeChecklist.checkLists[storeChecklist.checkLists.findIndex(list => list.id === props.checklistId)]
+const checks = storeChecklist.checkItems.filter(check => check.checklistID === props.checklistId)
+
 let progress = 0
 
 function clickedCheck(index) {

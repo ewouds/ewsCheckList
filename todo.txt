@@ -10,3 +10,4 @@
 - [x] progress bar in checklist header
 - [ ] check all button
 - [ ] update progress if uncheck -> watch function?
+- [ ] if switch checklist, make first check active 

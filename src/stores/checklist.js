@@ -10,6 +10,7 @@ export const useCheckListStore = defineStore({
     test: false,
     userName: "ewouds",
     planeName: "OO-OOO",
+    storedAt: new Date(),
   }),
   actions: {
     addChecksTolist(lists) {
